@@ -36,6 +36,36 @@ public class GuestDaoImpt extends JdbcDaoSupport implements GuestDao {
 		String sql = "select * from guest03";
 		return getJdbcTemplate().query(sql, rowMapper);
 	}
+	@Override
+	public int nextVal() throws Exception{
+		String sql = "select max(sabun) as mx from guest03";
+		return getJdbcTemplate().queryForInt(sql);
+	}
+
+	@Override
+	public void insertOne(GuestVo bean) throws Exception {
+		String sql = "insert into guest03 values (?,?,now(),?)";
+		 getJdbcTemplate().update(sql,bean.getSabun(),bean.getName(),bean.getPay());
+	}
+
+	@Override
+	public GuestVo selectOne(int sabun) throws Exception {
+		String sql = "select * from guest03 where sabun=?";
+		return getJdbcTemplate().queryForObject(sql, rowMapper,sabun);
+	}
+
+	@Override
+	public int updateOne(GuestVo bean) throws Exception {
+		String sql = "update guest03 set name=?, pay=? where sabun=?";
+		return getJdbcTemplate().update(sql,bean.getName(),bean.getPay(),bean.getSabun());
+	}
+
+	@Override
+	public int deleteOne(int sabun) throws Exception {
+		String sql = "delete from guest03 where sabun=?";
+		
+		return getJdbcTemplate().update(sql,sabun);
+	}
 
 }
 
