@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
-	#popup{
+	.popup{
 		background-color: windowframe;
 		width: 500px;
 		height: 400px;
@@ -17,6 +17,11 @@
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript">
+	$(function(){
+		
+		
+	});
+	
 	
 	$(function(){
 		$('table a').click(function(){
@@ -49,7 +54,35 @@
 <title>Insert title here</title>
 </head>
 <body>	
-		<div id="popup">
+		<div class="popup" id="detail">
+			<h1>상세 페이지</h1>
+	
+				<p>
+					<span></span>
+					<span class="bean"></span>
+				</p>
+				
+				<p>
+					<span></span>
+					<span class="bean"></span>
+				</p>
+				
+				<p>
+					<span></span>
+					<span class="bean"></span>
+				</p>
+				
+				<p>
+					<span></span>
+					<span class="bean"></span>
+				</p>
+				
+				<p>
+					<button>수정</button>
+					<button>삭제</button>
+				</p>
+		</div>
+		<div class="popup" id="add">
 			<form>
 			<h1>입력 페이지</h1>
 				<div>

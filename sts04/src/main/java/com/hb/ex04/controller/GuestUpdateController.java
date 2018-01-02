@@ -23,4 +23,5 @@ public class GuestUpdateController {
 		
 		return "redirect:/guest/bbs";
 	}
+	
 }

@@ -12,25 +12,22 @@ import com.hb.ex04.service.GuestService;
 @Controller
 public class GuestSelectController {
 	
-	GuestService guestService;
-	
 	@Autowired
-	public void setGuestService(GuestService guestService) {
-		this.guestService = guestService;
-	}
+	GuestService guestService;
 	
 	@RequestMapping(value="/guest/bbs",method=RequestMethod.GET)
 	public String list(Model model) throws Exception {
-		model.addAttribute("list",guestService.selectAll());
-		
+		model.addAttribute("list", guestService.selectAll());		
 		return "list";
 	}
 	
 	@RequestMapping(value="/guest/{idx}")
-	public String detail(Model model, @PathVariable("idx") int sabun) throws Exception{
+	public String detail(Model model,@PathVariable("idx") int sabun) throws Exception{
 		// json
-		model.addAttribute("bean", guestService.selectOne(sabun));
+		System.out.println("/guest/"+sabun);
+		model.addAttribute("bean"
+				, guestService.selectOne(sabun));
+		System.out.println(guestService.selectOne(sabun));
 		return "json/json";
 	}
-	
 }
