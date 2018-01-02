@@ -11,7 +11,10 @@
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
-
+	
+	<beans:bean id="guestService" class="com.hb.ex04.service.GuestServiceImpt">
+		<beans:property name="guestDao" ref="guestDao"></beans:property>
+	</beans:bean>
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 
