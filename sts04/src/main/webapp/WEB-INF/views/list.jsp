@@ -19,6 +19,17 @@
 <script type="text/javascript">
 	
 	$(function(){
+		$('table a').click(function(){
+			$.ajax({
+				'url':$(this).attr('href'),
+				'method':'GET',
+				'success': function(data){
+					
+				}
+				
+			});
+			return false;
+		});
 		$('#popup').hide();
 		$('#add').click(function(){
 			$('#popup').show();
@@ -32,7 +43,6 @@
 					window.location.reload();
 				}
 			});
-			return false;
 		});
 	});
 </script>
@@ -72,10 +82,10 @@
 		</tr>
 		<c:forEach items="${list }" var="bean">
 		<tr>
-			<td><a href="#">${bean.sabun }</a></td>
-			<td><a href="#">${bean.name }</a></td>
-			<td><a href="#">${bean.nalja }</a></td>
-			<td><a href="#">${bean.pay }</a></td>
+			<td><a href="${bean.sabun }">${bean.sabun }</a></td>
+			<td><a href="${bean.sabun }">${bean.name }</a></td>
+			<td><a href="${bean.sabun }">${bean.nalja }</a></td>
+			<td><a href="${bean.sabun }">${bean.pay }</a></td>
 		</tr>
 		</c:forEach>
 	</table>

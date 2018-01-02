@@ -8,4 +8,5 @@ public interface GuestService {
 	
 	List<GuestVo> selectAll()throws Exception;
 	void insertOne(GuestVo bean) throws Exception;
+	GuestVo selectOne(int sabun)throws Exception;
 }

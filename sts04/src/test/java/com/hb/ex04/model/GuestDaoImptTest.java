@@ -29,5 +29,11 @@ public class GuestDaoImptTest {
 		assertTrue("return list error", guestDao.selectAll() instanceof List);
 		
 	}
+	@Test
+	public void testSelectOne()throws Exception{
+		assertNotNull(guestDao.selectOne(1111));
+		
+	}
+	
 
 }

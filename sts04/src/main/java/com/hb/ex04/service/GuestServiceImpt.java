@@ -26,4 +26,10 @@ public class GuestServiceImpt implements GuestService {
 		
 	}
 
+	@Override
+	public GuestVo selectOne(int sabun) throws Exception {
+		
+		return guestDao.selectOne(sabun);
+	}
+
 }

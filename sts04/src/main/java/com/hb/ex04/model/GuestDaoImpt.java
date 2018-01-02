@@ -23,4 +23,10 @@ public class GuestDaoImpt implements GuestDao {
 		sqlMapClient.insert("insertOne",bean);
 	}
 
+	@Override
+	public GuestVo selectOne(int sabun) throws Exception {
+		
+		return (GuestVo) sqlMapClient.queryForObject("selectOne", sabun);
+	}
+
 }

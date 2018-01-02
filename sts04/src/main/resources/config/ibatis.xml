@@ -10,4 +10,8 @@
     	insert into guest03 values (#sabun#,#name#,now(),#pay#)
     	</select>
     	
+    	<select id="selectOne" parameterClass="int" resultClass="com.hb.ex04.model.entity.GuestVo">
+    	select * from guest03 where sabun=#value#
+    	</select>
+    	
     </sqlMap>
