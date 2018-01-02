@@ -31,7 +31,6 @@
 				success:function(){
 					window.location.reload();
 				}
-				
 			});
 			return false;
 		});

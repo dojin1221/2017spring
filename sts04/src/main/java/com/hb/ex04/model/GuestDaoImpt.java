@@ -15,7 +15,7 @@ public class GuestDaoImpt implements GuestDao {
 	@Override
 	public List<GuestVo> selectAll() throws Exception {
 		
-		return sqlMapClient.queryForList("selectAll");
+		return sqlMapClient.queryForList("selectAll") ;
 	}
 
 	@Override
