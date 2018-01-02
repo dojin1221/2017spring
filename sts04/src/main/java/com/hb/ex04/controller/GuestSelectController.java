@@ -21,7 +21,7 @@ public class GuestSelectController {
 		return "list";
 	}
 	
-	@RequestMapping(value="/guest/{idx}")
+	@RequestMapping(value="/guest/{idx}", method=RequestMethod.GET)
 	public String detail(Model model,@PathVariable("idx") int sabun) throws Exception{
 		// json
 		System.out.println("/guest/"+sabun);
@@ -31,3 +31,4 @@ public class GuestSelectController {
 		return "json/json";
 	}
 }
+
