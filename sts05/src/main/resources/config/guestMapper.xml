@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.hb.ex05.model.GuestDao">
+  	
+  	<select id="selectAll" resultType="bean">
+  	SELECT * FROM GUEST03
+  	</select>
+  	
+  	<insert id="insertOne" parameterType="bean">
+  	insert into guest03 values (#{sabun},#{name},now(),#{pay})
+  	</insert>
+  	
+  	<select id="selectOne" resultType="bean" parameterType="int">
+  	select * from guest03 where sabun=#{value}
+  	</select>
+  	
+  	<update id="updateOne" parameterType="bean">
+  	update guest03 set name=#{name}, pay=#{pay} where sabun=#{sabun}
+  	</update>
+  	
+  	<delete id="deleteOne" parameterType="int">
+  	delete from guest03 where sabun=${value}
+  	</delete>
+  	
+  </mapper>
