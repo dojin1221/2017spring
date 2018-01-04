@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 
 import com.hb.ex05.model.GuestDao;
@@ -28,8 +29,9 @@ public class GuestServiceImpt implements GuestService {
 	}
 
 	@Override
+	@Transactional(rollbackFor=Exception.class)
 	public void detailOne(int sabun,Model model) {
-		//db 
+		guestDao.payPlus(sabun);
 		model.addAttribute("bean", guestDao.selectOne(sabun));
 		model.addAttribute("title", "»ó¼¼");
 		model.addAttribute("readonly", "readonly");

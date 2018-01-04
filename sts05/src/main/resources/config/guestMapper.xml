@@ -25,4 +25,8 @@
   	delete from guest03 where sabun=${value}
   	</delete>
   	
+  	<update id="payPlus" parameterType="int">
+  	update guest03 set pay=pay+1 where sabun=#{value}
+  	</update>
+  	
   </mapper>

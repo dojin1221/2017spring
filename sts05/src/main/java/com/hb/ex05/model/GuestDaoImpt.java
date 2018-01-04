@@ -28,19 +28,25 @@ public class GuestDaoImpt implements GuestDao {
 	@Override
 	public GuestVo selectOne(int sabun) {
 		
-		return session.selectOne("selectOne", sabun);
+		return session.selectOne("com.hb.ex05.model.GuestDao.selectOne", sabun);
 	}
 
 	@Override
 	public int updateOne(GuestVo bean) {
 		
-		return session.update("updateOne",bean);
+		return session.update("com.hb.ex05.model.GuestDao.updateOne",bean);
 	}
 
 	@Override
 	public int deleteOne(int sabun) {
 		
-		return session.delete("deleteone",sabun);
+		return session.delete("com.hb.ex05.model.GuestDao.deleteone",sabun);
+	}
+
+	@Override
+	public void payPlus(int sabun) {
+		//update guest03 set pay=pay+1 where sabun=#{sabun}
+		session.update("com.hb.ex05.model.GuestDao.payPlus",sabun);
 	}
 
 }
